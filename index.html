@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Code Quiz</title>
+    <link rel="stylesheet" href="../../normalize.css" />
+    <link rel="stylesheet" href="./assests/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div id="score"></div>
+      <div id="timer"></div>
+    </nav>
+    <div class="quiz-container">
+      <div class="question">
+        <h2>Questions</h2>
+      </div>
+      <div class="answer-options">
+        <ul>
+          <li id="optionA">
+            <input type="radio" name="answer" /> <label for="a">Option A</label>
+          </li>
+
+          <li id="optionB">
+            <input type="radio" name="answer" /> <label for="b">Option B</label>
+          </li>
+          <li id="optionC">
+            <input type="radio" name="answer" /> <label for="c">Option C</label>
+          </li>
+          <li id="optionD">
+            <input type="radio" name="answer" /> <label for="d">Option D</label>
+          </li>
+        </ul>
+      </div>
+      <button id="msg">Your time is up!</button>
+      <div id="start-btn">
+        <button>Start</button>
+    </div>
+
+      <div class="result"></div>
+    </div>
+    <script src="./assests/script.js"></script>
+  </body>
+</html>
