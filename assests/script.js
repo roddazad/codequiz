@@ -13,8 +13,8 @@ timeEl.appendChild(p2El);
 
 var msgEl = document.getElementById('msg')
 var quizEl = document.querySelectorAll(".quiz-container");
-var questionEl = document.querySelectorAll(".question");
-var answerEl = document.querySelectorAll(".answer-options");
+var questionEl = document.getElementById("question");
+var answerEl = document.getElementById("answer-options");
 var optionA = document.getElementById("optionA");
 var optionB = document.getElementById("optionB");
 var optionC = document.getElementById("optionC");
@@ -31,7 +31,7 @@ const questions = [
         b:"Cascading Style Sheets",
         c:"Cascading Simple Sheets",
         d:"None of the above",
-        answer:"c", 
+        answer:"Cascading Simple Sheets", 
     },
     {
         question: "What does HTML stand for?",
@@ -39,7 +39,7 @@ const questions = [
         b:"Home Tools Markup Language",
         c:"Hyper Text Markup Language",
         d: "Options A and B",
-        answer: "c",
+        answer: "Hyper Text Markup Language"
 
     },
     {
@@ -48,7 +48,7 @@ const questions = [
         b: "Mozilla",
         c: "Microsoft",
         d:"The World Wide Web Consortium",
-        answer: "d",
+        answer:"The World Wide Web Consortium"
     },
     {
         question: "Choose the correct HTML element for the largest heading:",
@@ -56,16 +56,19 @@ const questions = [
         b: "<h6>",
         c: "<head>",
         d: "<heading>",
-        answer: "a",
+        answer:"<h1>"
     },
 ];
 startEl.addEventListener('click', setTime);
-// optionA.addEventListener('click', setTime, );
-// optionB.addEventListener('click', setTime);
-// optionC.addEventListener('click', setTime);
-// optionD.addEventListener('click', setTime);
+startEl.addEventListener('click', displayQuestions);
+startEl.addEventListener('click', loadQuiz);
+answerEl.addEventListener('click', handleRadioButtonClick); 
+
+
+
 
 function setTime(){
+    
    
     var timerInterval = setInterval(function(){
         
@@ -90,12 +93,42 @@ function displayMessage(){
     msgEl.style.display = "block";
 
 };
-function quizArray(){
-    for (var i=0; i<questions.length; i++){
-        questionEl.innerHTML = questions[i].value;
-    }
+function displayQuestions(){
+    answerEl.style.display = "block";
+}
+var index = 0;
+var currentIndex = questions[index];
 
+function loadQuiz(){
+    for (index = 0; index < questions.length; index++){
+   
+   
+    questionEl.innerText = currentIndex.question;
+    optionA.innerText = currentIndex.a;
+    optionB.innerText = currentIndex.b;
+    optionC.innerText = currentIndex.c;
+    optionD.innerText = currentIndex.d;
+
+
+    }
+    return;
 };
+
+function handleRadioButtonClick (event){
+    console.log(buttonClicked);
+        var buttonClicked = event.target;
+    if (buttonClicked.matches('input[type="radio"]')){
+        if(buttonClicked.checked && buttonClicked.value === currentIndex.answer){
+                console.log("buttonClicked");
+        }
+
+    }
+}
+   
+
+
+
+
 
 
 

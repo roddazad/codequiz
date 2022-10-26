@@ -64,8 +64,10 @@ a{
     
     
  }
- .answer-options{
+ #answer-options{
    padding: 25px;
+   display: none;
+
    
   
  }
@@ -75,6 +77,7 @@ a{
    width: 500px;
    margin-top: 20vh;
    
+   
 }
 #start-btn{
    
@@ -83,7 +86,4 @@ a{
 }
 #msg {
    display: none;
-}
-.question{
-   display:none;
 }
